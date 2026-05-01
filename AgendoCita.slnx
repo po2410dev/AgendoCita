@@ -1,3 +1,12 @@
 <Solution>
-  <Project Path="AgendoCita.csproj" />
+  <Folder Name="/docs/" />
+  <Folder Name="/src/">
+    <Project Path="src/AgendoCita.Application/AgendoCita.Application.csproj" />
+    <Project Path="src/AgendoCita.Domain/AgendoCita.Domain.csproj" />
+    <Project Path="src/AgendoCita.Infrastructure/AgendoCita.Infrastructure.csproj" Id="e3d037da-86d0-4b01-98b2-26e5cb6b54ca" />
+    <Project Path="src/AgendoCita.Web/AgendoCita.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AgendoCita.UnitTests/AgendoCita.UnitTests.csproj" Id="e07f3d24-10a9-4498-8576-d7e4e484e8c9" />
+  </Folder>
 </Solution>
