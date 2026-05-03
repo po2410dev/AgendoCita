@@ -1,7 +1,15 @@
-var builder = WebApplication.CreateBuilder(args);
+using AgendoCita.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+
+
+ 
+  var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<AgendoCitaDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    //options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
