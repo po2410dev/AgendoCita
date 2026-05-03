@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore;
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AgendoCitaDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-    //options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection")));
+//options.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnection")));
+options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection")));
 
 var app = builder.Build();
 
