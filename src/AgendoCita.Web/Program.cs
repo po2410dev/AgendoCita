@@ -1,7 +1,7 @@
+using AgendoCita.Domain.Repositories;
 using AgendoCita.Infrastructure;
+using AgendoCita.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-
-
  
   var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +10,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AgendoCitaDbContext>(options =>
 //options.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnection")));
 options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection")));
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();  
+
 
 var app = builder.Build();
 
